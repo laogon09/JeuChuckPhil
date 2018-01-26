@@ -1,10 +1,13 @@
 #ifndef CASE_H
 #define CASE_H
 #include "character.h"
+#include "projectile.h"
+#include "terrain.h"
 
 class Case {
 public:
 	Case();
+	Case(int xValue, int yValue);
 	~Case();
 
 	int get_caseX() const;
@@ -15,15 +18,18 @@ public:
 
 
 	bool has_character() const;
-	//bool has_projectile() const;
-	//bool has_terrain() const;
+	bool has_projectile() const;
+	bool has_terrain() const;
+	bool collision();
 
 	void afficherCase() const;
 
+	
+
 private:
 	Character * charac;
-	//Terrain * ter;
-	//Projectile * proj;
+	Terrain * ter;
+	Projectile * proj;
 	int caseX;
 	int caseY;
 };

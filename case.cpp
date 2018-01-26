@@ -6,10 +6,20 @@ using namespace std;
 Case::Case()
 {
 	charac = nullptr;
-	//ter = nullptr;
-	//proj = nullptr;
+	caseX = 0;
+	caseY = 0;
+	ter = nullptr;
+	proj = nullptr;
 }
 
+Case::Case(int xValue, int yValue)
+{
+	charac = nullptr;
+	caseX = xValue;
+	caseY = yValue;
+	ter = nullptr;
+	proj = nullptr;
+}
 Case::~Case()
 {
 
@@ -46,34 +56,46 @@ bool Case::has_character() const
 	}
 }
 
-//bool Case::has_terrain() const
-//{
-//	if (ter != nullptr)
-//	{
-//		return true;
-//	}
-//	else {
-//		return false;
-//	}
-//}
+bool Case::has_terrain() const
+{
+	if (ter != nullptr)
+	{
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 
-//bool Case::has_projectile() const
-//{
-//	if (proj != nullptr)
-//	{
-//		return true;
-//	}
-//	else {
-//		return false;
-//	}
-//}
+bool Case::has_projectile() const
+{
+	if (proj != nullptr)
+	{
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+bool Case::collision()
+{
+	if (has_character() && has_projectile())
+		return true;
+	else if (has_character() && has_terrain())
+		return true;
+	else if (has_terrain() && has_projectile())
+		return true;
+	else
+		return false;
+}
 
 void Case::afficherCase() const
 {
 	cout << "|";
 	if (has_character() == true)
 	{
-		if (charac->get_faction == "good")
+		if (charac->get_faction() == "good")
 		{
 			cout << charac->get_hp() << "*";
 		}
@@ -81,14 +103,26 @@ void Case::afficherCase() const
 			cout << charac->get_hp();
 		}
 	}
-	//else if (has_projectile() == true)
-	//{
-	//	cout << //projectile's grid Name
-	//}
-	//else if (has_terrain() == true)
-	//{
-	//	cout << //terrain's grid Name
-	//}
+	else if (has_projectile() == true)
+	{
+		if (charac->get_faction() == "good")
+		{
+			cout << charac->get_hp() << "*";
+		}
+		else {
+			cout << charac->get_hp();
+		}
+	}
+	else if (has_terrain() == true)
+	{
+		if (ter->get_faction() == "good")
+		{
+			cout << ter->get_name() << "*";
+		}
+		else {
+			cout << ter->get_name();
+		}
+	}
 	else {
 		cout << "  ";
 	}

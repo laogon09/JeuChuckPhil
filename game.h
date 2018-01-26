@@ -10,6 +10,7 @@ public :
 	
 	int get_state();
 	void set_state(int etat);
+	bool menuON;
 	bool gameON;
 
 	void createMenu();
@@ -23,7 +24,7 @@ public :
 private:
 
 	int state;
-	Map presentMap;
+	string mapName;
 };
 
 #endif //GAME_H

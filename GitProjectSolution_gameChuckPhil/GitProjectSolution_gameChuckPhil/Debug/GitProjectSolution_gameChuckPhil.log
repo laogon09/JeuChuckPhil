@@ -1,5 +1,8 @@
-﻿  main.cpp
-  game.cpp
-  character.cpp
+﻿  terrain.cpp
+  case.cpp
   Generating Code...
+  Skipping... (no relevant changes detected)
+  map.cpp
+  main.cpp
+  game.cpp
   GitProjectSolution_gameChuckPhil.vcxproj -> C:\Users\user\Documents\University\Personnel\GameLOLTry\JeuChuckPhil\GitProjectSolution_gameChuckPhil\Debug\GitProjectSolution_gameChuckPhil.exe
