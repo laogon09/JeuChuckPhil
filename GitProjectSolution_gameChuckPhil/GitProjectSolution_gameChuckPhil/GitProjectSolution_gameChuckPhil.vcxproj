@@ -115,15 +115,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\case.h" />
     <ClInclude Include="..\..\character.h" />
     <ClInclude Include="..\..\game.h" />
     <ClInclude Include="..\..\map.h" />
+    <ClInclude Include="..\..\projectile.h" />
+    <ClInclude Include="..\..\terrain.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\case.cpp" />
     <ClCompile Include="..\..\character.cpp" />
     <ClCompile Include="..\..\game.cpp" />
     <ClCompile Include="..\..\main.cpp" />
     <ClCompile Include="..\..\map.cpp" />
+    <ClCompile Include="..\..\projectile.cpp" />
+    <ClCompile Include="..\..\terrain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
