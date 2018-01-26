@@ -49,6 +49,11 @@ public:
 	//void mobAttack();
 	//void deathanimation();
 
+	void moveUp();
+	void moveDown();
+	void moveLeft();
+	void moveRight();
+
 private:
 	int hp;
 	string direction;
