@@ -60,6 +60,10 @@ int Character::get_hp()
 {
 	return hp;
 }
+void Character::set_hp(int health)
+{
+	hp = health;
+}
 void Character::heal(int healValue) {
 	hp = hp + healValue;
 }
@@ -129,4 +133,9 @@ string Character::get_faction() {
 }
 void Character::set_faction(string team) {
 	faction = team;
+}
+
+void Character::attack(string attackName)
+{
+
 }

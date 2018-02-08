@@ -1,7 +1,9 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+#include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 
@@ -17,6 +19,7 @@ public:
 
 	//fonctions d'acces
 	int get_hp();
+	void set_hp(int health);
 	void heal(int healValue);
 	void damage(int dmgValue);
 
@@ -46,14 +49,15 @@ public:
 	string get_faction();
 	void set_faction(string team);
 
-	//void mobAttack();
+	void attack(string attackName);
 	//void deathanimation();
 
 	void moveUp();
 	void moveDown();
 	void moveLeft();
 	void moveRight();
-
+protected:
+	vector<string> attackList;
 private:
 	int hp;
 	string direction;
@@ -65,6 +69,7 @@ private:
 	string faction;
 	//int level;
 	//int exp;
+
 
 };
 #endif; //CHARACTER_H

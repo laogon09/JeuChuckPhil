@@ -8,9 +8,11 @@ public:
 	Projectile();
 	~Projectile();
 
+	//bool spread() const;
 	string get_name() const;
 	string get_faction() const;
 private:
+	//int spread_dist;
 	string name;
 	string faction;
 };
